@@ -1,4 +1,4 @@
 package com.olba.model;
 
-public class Classes {
+public class Schedule {
 }

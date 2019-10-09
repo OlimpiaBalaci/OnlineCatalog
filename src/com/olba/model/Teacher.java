@@ -1,4 +1,4 @@
 package com.olba.model;
 
-public class Locations {
+public class Teacher {
 }
