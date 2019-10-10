@@ -7,5 +7,5 @@ public class Student {
     private String date_of_birth;
     private String phone;
     private String classroom;
-
+    private String year;
 }
