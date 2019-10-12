@@ -24,7 +24,9 @@ public class Main {
                     /*Constants.DB_DRIVER_IMPLEMENTATION + "://" + Constants.DB_CONN_STRING,
                     Constants.DB_USERNAME,
                     Constants.DB_PASSWORD*/
+
             );
+            System.out.println("Connected succesfully!");
 
         } catch (SQLException e) {
             e.printStackTrace();
