@@ -9,7 +9,7 @@ public class Student {
     private String classroom;
     private String year;
 
-    public Student( String first_name, String last_name, String e_mail, String date_of_birth, String phone, String classroom, String year ) {
+    public Student(String first_name, String last_name, String e_mail, String date_of_birth, String phone, String classroom, String year) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.e_mail = e_mail;
@@ -18,8 +18,9 @@ public class Student {
         this.classroom = classroom;
         this.year = year;
     }
+
     public String showStudent() {
 
-        return first_name + last_name;
+        return first_name + " " + last_name + " " + e_mail + " " + date_of_birth + " " + phone + " " + classroom + " " + year;
     }
 }
