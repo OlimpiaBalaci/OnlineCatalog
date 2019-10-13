@@ -1,27 +1,26 @@
 package com.olba.model;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table
-
-
 public class Student {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private int id;
+
     private String first_name;
     private String last_name;
     private String e_mail;
-    private String date_of_birth;
+    private Date date_of_birth;
     private String phone;
     private String classroom;
-    private String year;
+    private int year;
 
-    public Student( int id, String first_name, String last_name, String e_mail, String date_of_birth, String phone, String classroom, String year) {
+    public Student( int id, String first_name, String last_name, String e_mail, Date date_of_birth, String phone, String classroom, int year) {
        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -53,7 +52,7 @@ public class Student {
         return e_mail;
     }
 
-    public String getDate_of_birth() {
+    public Date getDate_of_birth() {
         return date_of_birth;
     }
 
@@ -65,7 +64,7 @@ public class Student {
         return classroom;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
@@ -85,7 +84,7 @@ public class Student {
         this.e_mail = e_mail;
     }
 
-    public void setDate_of_birth(String date_of_birth) {
+    public void setDate_of_birth(Date date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 
@@ -97,7 +96,7 @@ public class Student {
         this.classroom = classroom;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 }
