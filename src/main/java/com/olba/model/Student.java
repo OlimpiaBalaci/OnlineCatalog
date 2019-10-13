@@ -19,9 +19,13 @@ public class Student {
     private String phone;
     private String classroom;
     private int year;
+    /*In my case, I was setting id of an entity which
+    I was trying to persist using Entity Manager. When, I removed the setter for id, it started working fine*/
 
-    public Student( int id, String first_name, String last_name, String e_mail, Date date_of_birth, String phone, String classroom, int year) {
-       this.id = id;
+    public Student() {
+    }
+
+    public Student(String first_name, String last_name, String e_mail, Date date_of_birth, String phone, String classroom, int year) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.e_mail = e_mail;

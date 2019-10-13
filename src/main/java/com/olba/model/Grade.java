@@ -1,15 +1,18 @@
 package com.olba.model;
 
 public class Grade {
-
+    private int id;
     private int grade;
     private String discipline;
 
-    public Grade( int grade, String discipline ) {
+    public Grade(int id, int grade, String discipline) {
         this.grade = grade;
         this.discipline = discipline;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public int getGrade() {
         return grade;
@@ -19,11 +22,11 @@ public class Grade {
         return discipline;
     }
 
-    public void setGrade( int grade ) {
+    public void setGrade(int grade) {
         this.grade = grade;
     }
 
-    public void setDiscipline( String discipline ) {
+    public void setDiscipline(String discipline) {
         this.discipline = discipline;
     }
 }
