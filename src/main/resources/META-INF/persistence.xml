@@ -7,10 +7,15 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Entity classes -->
-        <!--<class>com.rosu.model.Actor</class>
-        <class>com.rosu.model.Movie</class>
-        <class>com.rosu.model.Director</class>
-        <class>com.rosu.model.Role</class>-->
+        <class>com.olba.model.Classroom</class>
+        <class>com.olba.model.Discipline</class>
+        <class>com.olba.model.Grade</class>
+        <class>com.olba.model.Location</class>
+        <class>com.olba.model.Message</class>
+        <class>com.olba.model.Parent</class>
+        <class>com.olba.model.Schedule</class>
+        <class>com.olba.model.Student</class>
+        <class>com.olba.model.Teacher</class>
 
 
         <properties>
