@@ -1,19 +1,30 @@
 package com.olba.model;
 
+import javax.persistence.*;
 import java.util.Date;
+@Entity
+@Table
 
 public class Classroom {
 
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String class_name;
     private String students_list;
     private String teachers_list;
     private Date year;
 
-    public Classroom( String class_name, String students_list, String teachers_list, Date year ) {
+    public Classroom(int id, String class_name, String students_list, String teachers_list, Date year ) {
         this.class_name = class_name;
         this.students_list = students_list;
         this.teachers_list = teachers_list;
         this.year = year;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getClass_name() {
@@ -32,7 +43,11 @@ public class Classroom {
         return year;
     }
 
-    public void setClass_name( String class_name ) {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setClass_name(String class_name ) {
         this.class_name = class_name;
     }
 
