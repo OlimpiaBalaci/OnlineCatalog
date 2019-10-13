@@ -23,5 +23,6 @@ public class Main {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Catalog");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
+        System.out.println("Connected succesfully!");
     }
 }
