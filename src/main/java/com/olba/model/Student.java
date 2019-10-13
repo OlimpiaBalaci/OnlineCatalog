@@ -1,7 +1,8 @@
 package com.olba.model;
 
 public class Student {
-    private int id_pk_ai;
+
+    private int id;
     private String first_name;
     private String last_name;
     private String e_mail;
@@ -10,8 +11,8 @@ public class Student {
     private String classroom;
     private String year;
 
-    public Student(int id_pk_ai, String first_name, String last_name, String e_mail, String date_of_birth, String phone, String classroom, String year) {
-       this.id_pk_ai = id_pk_ai;
+    public Student( int id, String first_name, String last_name, String e_mail, String date_of_birth, String phone, String classroom, String year) {
+       this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.e_mail = e_mail;
@@ -26,8 +27,8 @@ public class Student {
         return first_name + " " + last_name + " " + e_mail + " " + date_of_birth + " " + phone + " " + classroom + " " + year;
     }*/
 
-    public int getId_pk_ai() {
-        return id_pk_ai;
+    public int getId() {
+        return id;
     }
 
     public String getFirst_name() {
@@ -58,8 +59,8 @@ public class Student {
         return year;
     }
 
-    public void setId_pk_ai(int id_pk_ai) {
-        this.id_pk_ai = id_pk_ai;
+    public void setId( int id ) {
+        this.id = id;
     }
 
     public void setFirst_name(String first_name) {

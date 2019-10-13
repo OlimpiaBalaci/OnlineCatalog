@@ -4,6 +4,9 @@ import com.olba.constants.Constants;
 import com.olba.model.Student;
 import com.olba.db.DatabaseWrapper;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.SQLException;
 
 public class Main {
@@ -18,18 +21,7 @@ public class Main {
         //String str = student.showStudent();
         //System.out.println(str);
 
-        DatabaseWrapper databaseWrapper = new DatabaseWrapper();
-        try {
-            databaseWrapper.createConnection("jdbc:mysql://localhost:3306/onlinecatalog","root","maxim11forever"
-                    /*Constants.DB_DRIVER_IMPLEMENTATION + "://" + Constants.DB_CONN_STRING,
-                    Constants.DB_USERNAME,
-                    Constants.DB_PASSWORD*/
-
-            );
-            System.out.println("Connected succesfully!");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Catalog");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
     }
 }
