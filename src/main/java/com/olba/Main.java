@@ -15,8 +15,8 @@ public class Main {
         // write your code here
 
         //for student
-        Student student = new Student(1, "Olimpia", "Balaci", "olimpia.balaci@gmail.com", "11/06/1982",
-                "0728478802", "9B", "2019"
+        Student student = new Student(1, "Olimpia", "Balaci", "olimpia.balaci@gmail.com", null,/*"11/06/1982,"*/
+                "0728478802", "9B", 2019
         );
         //String str = student.showStudent();
         //System.out.println(str);
