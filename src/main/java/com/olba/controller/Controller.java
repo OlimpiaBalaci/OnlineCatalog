@@ -3,13 +3,12 @@ package com.olba.controller;
 import com.olba.model.Student;
 import com.olba.repository.StudentRepository;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.sql.Date;
 
 public class Controller {
     public Button btnSave;
@@ -19,7 +18,16 @@ public class Controller {
     public Label lastName;
     public Label eMail;
     public TextField txtEMail;
+    public Label dateOfBirth;
+    public Label phone;
+    public Label classRoom;
+    public Label year;
+    public TextField txtPhone;
+    public TextField txtClassRoom;
+    public DatePicker dbkDateOfBirth;
+    public Spinner spnYear;
     private StudentRepository studentRepository;//we make connection only once time
+
 
     public void initialize(){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Catalog");
@@ -32,6 +40,10 @@ public class Controller {
         student.setFirst_name(txtFirstName.getText());
         student.setLast_name(txtLastName.getText());
         student.setE_mail(txtEMail.getText());
+        student.setDate_of_birth(dbkDateOfBirth.getValue());
+        student.setPhone(txtPhone.getText());
+        student.setClassroom(txtClassRoom.getText());
+        student.setYear((Integer) spnYear.getValue());
         /*EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Catalog");
         EntityManager entityManager = entityManagerFactory.createEntityManager(); copied up*/
 
