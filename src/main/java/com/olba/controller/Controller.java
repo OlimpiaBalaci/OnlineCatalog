@@ -12,7 +12,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class Controller {
-    public TextField txtName;
     public Button btnSave;
     public TextField txtLastName;
     public TextField txtFirstName;
