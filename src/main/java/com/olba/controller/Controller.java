@@ -49,6 +49,7 @@ public class Controller {
 
         /*StudentRepository studentRepository = new StudentRepository(entityManager); copied up*/
         studentRepository.save(student);
+        System.out.println("Student added successfully" + txtFirstName);
 
     }
 }
