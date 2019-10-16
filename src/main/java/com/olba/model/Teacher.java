@@ -19,8 +19,7 @@ public class Teacher {
     private Date hiringDate;
     private boolean status;
 
-    public Teacher( int id, String first_name, String last_name, String e_mail, String phone, String grade, Date hiringDate, boolean status ) {
-        this.id = id;
+    public Teacher(String first_name, String last_name, String e_mail, String phone, String grade, Date hiringDate, boolean status) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.e_mail = e_mail;
@@ -62,35 +61,35 @@ public class Teacher {
         return status;
     }
 
-    public void setId( int id ) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setFirst_name( String first_name ) {
+    public void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
 
-    public void setLast_name( String last_name ) {
+    public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
 
-    public void setE_mail( String e_mail ) {
+    public void setE_mail(String e_mail) {
         this.e_mail = e_mail;
     }
 
-    public void setPhone( String phone ) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public void setGrade( String grade ) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 
-    public void setHiringDate( Date hiringDate ) {
+    public void setHiringDate(Date hiringDate) {
         this.hiringDate = hiringDate;
     }
 
-    public void setStatus( boolean status ) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 }

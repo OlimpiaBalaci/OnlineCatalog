@@ -14,8 +14,7 @@ public class Discipline {
     private int school_level;
     private String status;
 
-    public Discipline( int id, String discipline_name, int school_level, String status ) {
-        this.id = id;
+    public Discipline(String discipline_name, int school_level, String status) {
         this.discipline_name = discipline_name;
         this.school_level = school_level;
         this.status = status;
@@ -38,19 +37,19 @@ public class Discipline {
         return status;
     }
 
-    public void setId( int id ) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setDiscipline_name( String discipline_name ) {
+    public void setDiscipline_name(String discipline_name) {
         this.discipline_name = discipline_name;
     }
 
-    public void setSchool_level( int school_level ) {
+    public void setSchool_level(int school_level) {
         this.school_level = school_level;
     }
 
-    public void setStatus( String status ) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }

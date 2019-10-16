@@ -11,13 +11,13 @@ public class Classroom {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String class_name;
+    private String classroom_name;
     private String students_list;
     private String teachers_list;
     private Date year;
 
-    public Classroom(int id, String class_name, String students_list, String teachers_list, Date year ) {
-        this.class_name = class_name;
+    public Classroom(String classroom_name, String students_list, String teachers_list, Date year ) {
+        this.classroom_name = classroom_name;
         this.students_list = students_list;
         this.teachers_list = teachers_list;
         this.year = year;
@@ -27,8 +27,8 @@ public class Classroom {
         return id;
     }
 
-    public String getClass_name() {
-        return class_name;
+    public String getClassroom_name() {
+        return classroom_name;
     }
 
     public String getStudents_list() {
@@ -47,8 +47,8 @@ public class Classroom {
         this.id = id;
     }
 
-    public void setClass_name(String class_name ) {
-        this.class_name = class_name;
+    public void setClassroom_name(String classroom_name) {
+        this.classroom_name = classroom_name;
     }
 
     public void setStudents_list( String students_list ) {

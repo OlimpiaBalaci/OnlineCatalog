@@ -1,9 +1,17 @@
 package com.olba.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table
 public class Schedule {
-    private String classroom_id;
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String classroom_name;
     private String teacher_name;
     private String location;
     private Date date;
@@ -13,8 +21,8 @@ public class Schedule {
     private String details;
     private String discipline;
 
-    public Schedule( String classroom_id, String teacher_name, String location, Date date, Date start, Date end, int time_slot, String details, String discipline ) {
-        this.classroom_id = classroom_id;
+    public Schedule(String classroom_name, String teacher_name, String location, Date date, Date start, Date end, int time_slot, String details, String discipline) {
+        this.classroom_name = classroom_name;
         this.teacher_name = teacher_name;
         this.location = location;
         this.date = date;
@@ -25,8 +33,8 @@ public class Schedule {
         this.discipline = discipline;
     }
 
-    public String getClassroom_id() {
-        return classroom_id;
+    public String getClassroom_name() {
+        return classroom_name;
     }
 
     public String getTeacher_name() {
@@ -61,39 +69,39 @@ public class Schedule {
         return discipline;
     }
 
-    public void setClassroom_id( String classroom_id ) {
-        this.classroom_id = classroom_id;
+    public void setClassroom_name(String classroom_name) {
+        this.classroom_name = classroom_name;
     }
 
-    public void setTeacher_name( String teacher_name ) {
+    public void setTeacher_name(String teacher_name) {
         this.teacher_name = teacher_name;
     }
 
-    public void setLocation( String location ) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public void setDate( Date date ) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public void setStart( Date start ) {
+    public void setStart(Date start) {
         this.start = start;
     }
 
-    public void setEnd( Date end ) {
+    public void setEnd(Date end) {
         this.end = end;
     }
 
-    public void setTime_slot( int time_slot ) {
+    public void setTime_slot(int time_slot) {
         this.time_slot = time_slot;
     }
 
-    public void setDetails( String details ) {
+    public void setDetails(String details) {
         this.details = details;
     }
 
-    public void setDiscipline( String discipline ) {
+    public void setDiscipline(String discipline) {
         this.discipline = discipline;
     }
 }
