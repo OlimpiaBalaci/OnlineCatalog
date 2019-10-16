@@ -29,7 +29,7 @@ public class Controller {
     private StudentRepository studentRepository;//we make connection only once time
 
 
-    public void initialize(){
+    public void initialize() {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Catalog");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         studentRepository = new StudentRepository(entityManager);
@@ -37,7 +37,12 @@ public class Controller {
 
     public void saveStudent(ActionEvent actionEvent) {
         Student student = new Student();
-        student.setFirst_name(txtFirstName.getText());
+        if (txtFirstName.getText().isEmpty()) {
+            System.out.println("The FirstName can not be empty!");
+        } else {
+            student.setFirst_name(txtFirstName.getText());
+        }
+//        student.setFirst_name(txtFirstName.getText());
         student.setLast_name(txtLastName.getText());
         student.setE_mail(txtEMail.getText());
         student.setDate_of_birth(dbkDateOfBirth.getValue());

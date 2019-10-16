@@ -1,5 +1,7 @@
 package com.olba.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -25,7 +27,7 @@ public class Student {
     public Student() {
     }
 
-    public Student( String first_name, String last_name, String e_mail, LocalDate date_of_birth, String phone, String classroom, int year) {
+    public Student(String first_name, String last_name, String e_mail, LocalDate date_of_birth, String phone, String classroom, int year) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.e_mail = e_mail;
@@ -72,7 +74,7 @@ public class Student {
         return year;
     }
 
-    public void setId( int id ) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -88,7 +90,7 @@ public class Student {
         this.e_mail = e_mail;
     }
 
-    public void setDate_of_birth( LocalDate date_of_birth) {
+    public void setDate_of_birth(LocalDate date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 
