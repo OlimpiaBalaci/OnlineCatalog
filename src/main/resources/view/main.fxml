@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -30,11 +33,55 @@
                         <TextField fx:id="txtPhone" layoutX="104.0" layoutY="208.0" />
                         <TextField fx:id="txtClassRoom" layoutX="104.0" layoutY="253.0" />
                         <DatePicker fx:id="dbkDateOfBirth" layoutX="104.0" layoutY="173.0" />
-                        <Spinner fx:id="spnYear" min = "2010" max = "2030" initialValue="2019" layoutX="104.0" layoutY="286.0" />
+                        <Spinner fx:id="spnYear" initialValue="2019" layoutX="104.0" layoutY="286.0" max="2030" min="2010" />
                     </children>
                 </AnchorPane>
             </Tab>
-            <Tab text="Untitled Tab 2" />
+            <Tab text="Add Teacher">
+            <content>
+               <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <children>
+                     <Label layoutX="33.0" layoutY="46.0" text="First Name" />
+                     <Label layoutX="33.0" layoutY="78.0" text="Last Name" />
+                     <Label layoutX="36.0" layoutY="115.0" text="E-mail" />
+                     <Label layoutX="35.0" layoutY="151.0" text="Phone" />
+                     <Label layoutX="35.0" layoutY="184.0" text="Hiring date " />
+                     <Label layoutX="36.0" layoutY="217.0" text="Grade" />
+                     <Label layoutX="35.0" layoutY="258.0" text="Status" />
+                  </children>
+               </AnchorPane>
+            </content></Tab>
+         <Tab text="Add Parent">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+           </content>
+         </Tab>
+         <Tab text="Add Discipline">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+           </content>
+         </Tab>
         </TabPane>
     </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

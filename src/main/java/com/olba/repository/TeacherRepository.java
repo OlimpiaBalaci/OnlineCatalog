@@ -1,6 +1,5 @@
 package com.olba.repository;
 
-import com.olba.model.Student;
 import com.olba.model.Teacher;
 
 import javax.persistence.EntityManager;
