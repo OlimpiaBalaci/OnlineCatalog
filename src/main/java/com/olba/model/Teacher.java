@@ -1,7 +1,9 @@
 package com.olba.model;
 
+import javafx.scene.control.CheckBox;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table
@@ -16,10 +18,10 @@ public class Teacher {
     private String e_mail;
     private String phone;
     private String grade;
-    private Date hiringDate;
+    private LocalDate hiringDate;
     private boolean status;
 
-    public Teacher(String first_name, String last_name, String e_mail, String phone, String grade, Date hiringDate, boolean status) {
+    public Teacher( String first_name, String last_name, String e_mail, String phone, String grade, LocalDate hiringDate, boolean status) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.e_mail = e_mail;
@@ -27,6 +29,10 @@ public class Teacher {
         this.grade = grade;
         this.hiringDate = hiringDate;
         this.status = status;
+    }
+
+    public Teacher() {
+
     }
 
     public int getId() {
@@ -53,7 +59,7 @@ public class Teacher {
         return grade;
     }
 
-    public Date getHiringDate() {
+    public LocalDate getHiringDate() {
         return hiringDate;
     }
 
@@ -85,11 +91,14 @@ public class Teacher {
         this.grade = grade;
     }
 
-    public void setHiringDate(Date hiringDate) {
+    public void setHiringDate( LocalDate hiringDate) {
         this.hiringDate = hiringDate;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(boolean status)
+    {
         this.status = status;
     }
+
+
 }
