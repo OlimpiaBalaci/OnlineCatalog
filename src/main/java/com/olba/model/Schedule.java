@@ -1,7 +1,7 @@
 package com.olba.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table
@@ -14,14 +14,14 @@ public class Schedule {
     private String classroom_name;
     private String teacher_name;
     private String location;
-    private Date date;
-    private Date start;
-    private Date end;
-    private int time_slot;
+    private LocalDate date;
+    private LocalDate start;
+    private LocalDate end;
+    private String time_slot;
     private String details;
     private String discipline;
 
-    public Schedule(String classroom_name, String teacher_name, String location, Date date, Date start, Date end, int time_slot, String details, String discipline) {
+    public Schedule( String classroom_name, String teacher_name, String location, LocalDate date, LocalDate start, LocalDate end, String time_slot, String details, String discipline) {
         this.classroom_name = classroom_name;
         this.teacher_name = teacher_name;
         this.location = location;
@@ -32,6 +32,11 @@ public class Schedule {
         this.details = details;
         this.discipline = discipline;
     }
+
+    public Schedule() {
+
+    }
+
 
     public String getClassroom_name() {
         return classroom_name;
@@ -45,19 +50,19 @@ public class Schedule {
         return location;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public Date getStart() {
+    public LocalDate getStart() {
         return start;
     }
 
-    public Date getEnd() {
+    public LocalDate getEnd() {
         return end;
     }
 
-    public int getTime_slot() {
+    public String getTime_slot() {
         return time_slot;
     }
 
@@ -81,19 +86,19 @@ public class Schedule {
         this.location = location;
     }
 
-    public void setDate(Date date) {
+    public void setDate( LocalDate date) {
         this.date = date;
     }
 
-    public void setStart(Date start) {
+    public void setStart( LocalDate start) {
         this.start = start;
     }
 
-    public void setEnd(Date end) {
+    public void setEnd( LocalDate end) {
         this.end = end;
     }
 
-    public void setTime_slot(int time_slot) {
+    public void setTime_slot( String time_slot) {
         this.time_slot = time_slot;
     }
 

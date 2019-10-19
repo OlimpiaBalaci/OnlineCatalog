@@ -25,6 +25,10 @@ public class Parent {
 
     }
 
+    public Parent() {
+
+    }
+
     public int getId() {
         return id;
     }
