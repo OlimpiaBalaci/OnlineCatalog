@@ -34,6 +34,20 @@ public class StudentRepository implements CrudRepository<Student, Integer>{
 
     @Override
     public Student deleteById(Integer id) {
-        return null;
+
+        // try to find the entity in database
+        Student student = entityManager.find(Student.class, id);
+        try {
+            entityManager.getTransaction().begin();
+
+            entityManager.remove(student);
+            entityManager.getTransaction().commit();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return student;
+
     }
 }

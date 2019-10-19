@@ -1,134 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171"
             fx:controller="com.olba.controller.Controller">
     <center>
-        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-            <Tab text="AddStudent">
-                <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <Button fx:id="btnSave" layoutX="284.0" layoutY="325.0" mnemonicParsing="false"
-                                onAction="#saveStudent" prefHeight="6.0" prefWidth="58.0" text="Save"/>
-                        <TextField fx:id="txtFirstName" layoutX="104.0" layoutY="34.0"/>
-                        <Label fx:id="firstName" layoutX="28.0" layoutY="38.0" text="First Name"/>
-                        <Label fx:id="lastName" layoutX="28.0" layoutY="77.0" prefHeight="28.0" prefWidth="59.0"
-                               text="Last Name"/>
-                        <TextField fx:id="txtLastName" layoutX="104.0" layoutY="79.0"/>
-                        <Label fx:id="eMail" layoutX="24.0" layoutY="126.0" prefHeight="26.0" prefWidth="67.0"
-                               text="E-mail"/>
-                        <TextField fx:id="txtEMail" layoutX="104.0" layoutY="127.0"/>
-                        <Label fx:id="dateOfBirth" layoutX="23.0" layoutY="177.0" text="Date of Birth"/>
-                        <Label fx:id="phone" layoutX="25.0" layoutY="212.0" text="Phone"/>
-                        <Label fx:id="classRoom" layoutX="25.0" layoutY="248.0" text="Class Room"/>
-                        <Label fx:id="year" layoutX="27.0" layoutY="291.0" text="Year"/>
-                        <TextField fx:id="txtPhone" layoutX="104.0" layoutY="208.0"/>
-                        <TextField fx:id="txtClassRoom" layoutX="104.0" layoutY="253.0"/>
-                        <DatePicker fx:id="dbkDateOfBirth" layoutX="104.0" layoutY="173.0"/>
-                        <Spinner fx:id="spnYear" initialValue="2019" layoutX="104.0" layoutY="286.0" max="2030"
-                                 min="2010"/>
-                    </children>
-                </AnchorPane>
-            </Tab>
-            <Tab text="AddTeacher">
-                <content>
-                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                        <children>
-                            <Label fx:id="firstNameTeacher" layoutX="26.0" layoutY="36.0" text="First Name"/>
-                            <TextField fx:id="txtFirstNameTeacher" layoutX="120.0" layoutY="32.0"/>
-                            <Label fx:id="lastNameTeacher" layoutX="26.0" layoutY="69.0" text="Last Name"/>
-                            <TextField fx:id="txtLastNameTeacher" layoutX="120.0" layoutY="65.0"/>
-                            <TextField fx:id="txtEMailTeacher" layoutX="120.0" layoutY="100.0"/>
-                            <TextField fx:id="txtPhoneTeacher" layoutX="120.0" layoutY="139.0"/>
-                            <Label fx:id="eMailTeacher" layoutX="26.0" layoutY="104.0" text="E-mail"/>
-                            <Label fx:id="phoneTeacher" layoutX="26.0" layoutY="143.0" text="Phone"/>
-                            <Label fx:id="gradeTeacher" layoutX="29.0" layoutY="177.0" text="Grade"/>
-                            <TextField fx:id="txtGradeTeacher" layoutX="120.0" layoutY="182.0"/>
-                            <Label fx:id="hiringDateTeacher" layoutX="29.0" layoutY="221.0" text="Hiring Date"/>
-                            <DatePicker fx:id="dbkHiringDateTeacher" layoutX="120.0" layoutY="217.0"/>
-                            <Label fx:id="statusTeacher" layoutX="31.0" layoutY="258.0" text="Status"/>
-                            <CheckBox fx:id="checkBoXStatusTeacher" layoutX="120.0" layoutY="258.0"
-                                      mnemonicParsing="false" prefHeight="22.0" prefWidth="147.0" text="CheckBox"/>
-                            <Button fx:id="btnSaveTeacher" layoutX="300.0" layoutY="319.0" mnemonicParsing="false"
-                                    onAction="#saveTeacher" text="Save"/>
-                        </children>
-                    </AnchorPane>
-                </content>
-            </Tab>
-            <Tab text="AddSchedule">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                        <children>
-                            <Label fx:id="classRoomName" layoutX="21.0" layoutY="34.0" text="ClassRoom Name"/>
-                            <Label fx:id="teacherName" layoutX="21.0" layoutY="68.0" text="Teacher Name"/>
-                            <Label fx:id="locationName" layoutX="21.0" layoutY="100.0" text="Location"/>
-                            <Label fx:id="date" layoutX="21.0" layoutY="140.0" text="Date"/>
-                            <Label fx:id="startDate" layoutX="21.0" layoutY="177.0" text="Start Date"/>
-                            <Label fx:id="endDate" layoutX="21.0" layoutY="216.0" text="End Date"/>
-                            <Label fx:id="timeSlot" layoutX="20.0" layoutY="246.0" text="Time Slot"/>
-                            <Label fx:id="details" layoutX="20.0" layoutY="279.0" text="Details"/>
-                            <Label fx:id="discipline" layoutX="20.0" layoutY="315.0" text="Discipline"/>
-                            <TextField fx:id="txtClassRoomName" layoutX="131.0" layoutY="30.0"/>
-                            <TextField fx:id="txtTeacherName" layoutX="131.0" layoutY="64.0"/>
-                            <TextField fx:id="txtLocationName" layoutX="131.0" layoutY="96.0"/>
-                            <DatePicker fx:id="dbkDateSchedule" layoutX="131.0" layoutY="136.0"/>
-                            <DatePicker fx:id="dbkStartDate" layoutX="132.0" layoutY="173.0"/>
-                            <DatePicker fx:id="dbkEndDate" layoutX="132.0" layoutY="212.0"/>
-                            <TextField fx:id="txtTimeSlot" layoutX="131.0" layoutY="242.0"/>
-                            <TextField fx:id="txtDetails" layoutX="132.0" layoutY="275.0"/>
-                            <TextField fx:id="txtDiscipline" layoutX="131.0" layoutY="311.0"/>
-                            <Button fx:id="btnSaveSchedule" layoutX="349.0" layoutY="332.0" mnemonicParsing="false"
-                                    onAction="#saveSchedule" text="Save"/>
-                        </children>
-                    </AnchorPane>
-                </content>
-            </Tab>
-            <Tab text="AddParent">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                        <children>
-                            <Label fx:id="parentFirstName" layoutX="38.0" layoutY="24.0" text="First Name"/>
-                            <Label fx:id="parentLastName" layoutX="38.0" layoutY="74.0" text="Last Name"/>
-                            <Label fx:id="parentEMail" layoutX="38.0" layoutY="120.0" text="E-mail"/>
-                            <Label fx:id="parentPhone" layoutX="38.0" layoutY="169.0" text="Phone"/>
-                            <TextField fx:id="txtParentFirstName" layoutX="167.0" layoutY="20.0"/>
-                            <TextField fx:id="txtParentLastName" layoutX="167.0" layoutY="70.0"/>
-                            <TextField fx:id="txtParentEMail" layoutX="167.0" layoutY="125.0"/>
-                            <TextField fx:id="txtParentPhone" layoutX="167.0" layoutY="173.0"/>
-                            <Button fx:id="btnSaveParent" layoutX="264.0" layoutY="229.0" mnemonicParsing="false"
-                                    onAction="#saveParent" text="Save"/>
-                        </children>
-                    </AnchorPane>
-                </content>
-            </Tab>
-            <Tab text="AddMessage">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
-                </content>
-            </Tab>
-        </TabPane>
+
     </center>
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Add">
+                    <items>
+                        <MenuItem fx:id="mnuItemAddStudent" mnemonicParsing="false" onAction="#openAddStudent"
+                                  text="Add Student"/>
+                        <MenuItem fx:id="mnuItemAddTeacher" mnemonicParsing="false" onAction="#openAddTeacher"
+                                  text="Add Teacher"/>
+                        <MenuItem fx:id="mnuItemAddSchedule" mnemonicParsing="false" onAction="#openAddSchedule"
+                                  text="Add Schedule"/>
+                        <MenuItem fx:id="mnuItemAddParent" mnemonicParsing="false" onAction="#openAddParent"
+                                  text="Add Parent"/>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Delete">
+                    <items>
+                        <MenuItem fx:id="mnuItemDeleteStudent" mnemonicParsing="false" onAction="#openDeteleStudent"
+                                  text="Delete Student"/>
+                        <MenuItem fx:id="mnuItemDeleteTeacher" mnemonicParsing="false" onAction="#openDeleteTeacher"
+                                  text="Delete Teacher"/>
+                        <MenuItem fx:id="mnuItemDeleteSchedule" mnemonicParsing="false" onAction="#openDeleteSchedule"
+                                  text="Delete  Schedule"/>
+                        <MenuItem fx:id="mnuItemDeleteParent" mnemonicParsing="false" onAction="#openDeleteParent"
+                                  text="Delete Parent"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
 </BorderPane>

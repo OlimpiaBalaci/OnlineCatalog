@@ -9,11 +9,14 @@ import com.olba.repository.ScheduleRepository;
 import com.olba.repository.StudentRepository;
 import com.olba.repository.TeacherRepository;
 import javafx.event.ActionEvent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalTime;
 
 public class Controller {
@@ -75,6 +78,14 @@ public class Controller {
     public TextField txtParentEMail;
     public TextField txtParentPhone;
     public Button btnSaveParent;
+    public MenuItem mnuItemAddStudent;
+    public MenuItem mnuItemAddTeacher;
+    public MenuItem mnuItemAddSchedule;
+    public MenuItem mnuItemAddParent;
+    public MenuItem mnuItemDeleteStudent;
+    public MenuItem mnuItemDeleteTeacher;
+    public MenuItem mnuItemDeleteSchedule;
+    public MenuItem mnuItemDeleteParent;
     private StudentRepository studentRepository;//we make connection only once time
     private TeacherRepository teacherRepository;
     private ScheduleRepository scheduleRepository;
@@ -90,7 +101,7 @@ public class Controller {
         parentRepository = new ParentRepository(entityManager);
     }
 
-    public void saveStudent(ActionEvent actionEvent) {
+    public void saveStudent( ActionEvent actionEvent ) {
         Student student = new Student();
         if (txtFirstName.getText().isEmpty()) {
             System.out.println("The FirstName can not be empty!");
@@ -113,6 +124,13 @@ public class Controller {
 
     }
 
+    public void deleteStudent( ActionEvent actionEvent ) {
+       studentRepository.deleteById(1);
+
+        System.out.println("Student deleted successfully");
+
+    }
+
     public void saveTeacher( ActionEvent actionEvent ) {
         Teacher teacher = new Teacher();
         if (txtFirstNameTeacher.getText().isEmpty()) {
@@ -132,7 +150,8 @@ public class Controller {
         System.out.println("Teacher added successfully");
 
     }
-    public void saveSchedule (ActionEvent actionEvent) {
+
+    public void saveSchedule( ActionEvent actionEvent ) {
 
         Schedule schedule = new Schedule();
         schedule.setClassroom_name(txtClassRoomName.getText());
@@ -151,7 +170,7 @@ public class Controller {
 
     }
 
-    public void saveParent (ActionEvent actionEvent) {
+    public void saveParent( ActionEvent actionEvent ) {
 
         Parent parent = new Parent();
         parent.setFirst_name(txtParentFirstName.getText());
@@ -165,4 +184,36 @@ public class Controller {
 
     }
 
+    public void openAddStudent( ActionEvent actionEvent ) {
+
+    }
+
+    public void openAddTeacher( ActionEvent actionEvent ) {
+
+    }
+
+    public void openAddSchedule( ActionEvent actionEvent ) {
+
+    }
+
+    public void openAddParent( ActionEvent actionEvent ) {
+
+    }
+
+    public void openDeteleStudent( ActionEvent actionEvent ) {
+        deleteStudent(null);
+
+    }
+
+    public void openDeleteTeacher( ActionEvent actionEvent ) {
+
+    }
+
+    public void openDeleteSchedule( ActionEvent actionEvent ) {
+
+    }
+
+    public void openDeleteParent( ActionEvent actionEvent ) {
+
+    }
 }

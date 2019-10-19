@@ -1,7 +1,6 @@
 package com.olba;
 import com.olba.controller.Controller;
 import com.olba.model.Student;
-import com.olba.repository.StudentRepository;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.io.IOException;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Main extends Application {
     Controller controller;
@@ -36,28 +34,162 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/main.fxml"));
+            AtomicReference<FXMLLoader> fxmlLoader = new AtomicReference<>(new FXMLLoader());
+            Parent root = fxmlLoader.get().load(getClass().getClassLoader().getResourceAsStream("view/main.fxml"));
 
-        primaryStage.setTitle("Demo Java FX"); // title of window
-        primaryStage.setScene(new Scene(root, 400, 400));
-        primaryStage.setMinHeight(600);
-        primaryStage.setMinWidth(600);
+            primaryStage.setTitle("Demo Java FX"); // title of window
+            primaryStage.setScene(new Scene(root, 400, 400));
+            primaryStage.setMinHeight(600);
+            primaryStage.setMinWidth(600);
 
-        controller = fxmlLoader.getController();
 
-        //without lambda
-//        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-//                                           @Override
-//                                           public void handle(WindowEvent event) {
-//
-//                                           }
-//                                       });
+
+
+        controller = fxmlLoader.get().getController();
+        controller.mnuItemAddStudent.setOnAction(event -> {
+
+
+            try {
+                fxmlLoader.set(new FXMLLoader());
+                Parent home_page_parent =   fxmlLoader.get().load(getClass().getClassLoader().getResourceAsStream("view/add_student.fxml"));
+                Scene home_page_scene = new Scene(home_page_parent);
+                primaryStage.hide(); //optional
+                primaryStage.setScene(home_page_scene);
+                primaryStage.show();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
         primaryStage.setOnCloseRequest(event -> {
         });
 
         primaryStage.show(); // show the actual window
+
+
+        controller.mnuItemAddTeacher.setOnAction(event -> {
+
+
+            try {
+                fxmlLoader.set(new FXMLLoader());
+                Parent home_page_parent =   fxmlLoader.get().load(getClass().getClassLoader().getResourceAsStream("view/add_teacher.fxml"));
+                Scene home_page_scene = new Scene(home_page_parent);
+                primaryStage.hide(); //optional
+                primaryStage.setScene(home_page_scene);
+                primaryStage.show();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+        primaryStage.setOnCloseRequest(event -> {
+        });
+
+        primaryStage.show(); // show the actual window
+
+        controller.mnuItemAddSchedule.setOnAction(event -> {
+
+
+            try {
+                fxmlLoader.set(new FXMLLoader());
+                Parent home_page_parent =   fxmlLoader.get().load(getClass().getClassLoader().getResourceAsStream("view/add_schedule.fxml"));
+                Scene home_page_scene = new Scene(home_page_parent);
+                primaryStage.hide(); //optional
+                primaryStage.setScene(home_page_scene);
+                primaryStage.show();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+        primaryStage.setOnCloseRequest(event -> {
+        });
+
+        primaryStage.show(); // show the actual window
+        controller.mnuItemAddTeacher.setOnAction(event -> {
+
+
+            try {
+                fxmlLoader.set(new FXMLLoader());
+                Parent home_page_parent =   fxmlLoader.get().load(getClass().getClassLoader().getResourceAsStream("view/add_teacher.fxml"));
+                Scene home_page_scene = new Scene(home_page_parent);
+                primaryStage.hide(); //optional
+                primaryStage.setScene(home_page_scene);
+                primaryStage.show();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+        primaryStage.setOnCloseRequest(event -> {
+        });
+
+        primaryStage.show(); // show the actual window
+        controller.mnuItemAddParent.setOnAction(event -> {
+
+
+            try {
+                fxmlLoader.set(new FXMLLoader());
+                Parent home_page_parent =   fxmlLoader.get().load(getClass().getClassLoader().getResourceAsStream("view/add_parent.fxml"));
+                Scene home_page_scene = new Scene(home_page_parent);
+                primaryStage.hide(); //optional
+                primaryStage.setScene(home_page_scene);
+                primaryStage.show();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+        primaryStage.setOnCloseRequest(event -> {
+        });
+
+        primaryStage.show(); // show the actual window
+
+        controller.mnuItemDeleteStudent.setOnAction(event -> {
+         //controller.deleteStudent(null);
+
+            try {
+                fxmlLoader.set(new FXMLLoader());
+                Parent home_page_parent =   fxmlLoader.get().load(getClass().getClassLoader().getResourceAsStream("view/delete_student.fxml"));
+                Scene home_page_scene = new Scene(home_page_parent);
+                primaryStage.hide(); //optional
+                primaryStage.setScene(home_page_scene);
+                primaryStage.show();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+        primaryStage.setOnCloseRequest(event -> {
+        });
+
+        primaryStage.show(); // show the actual window
+
+
+
     }
+
+
+
     private static void stageLoader(){
 
     }
