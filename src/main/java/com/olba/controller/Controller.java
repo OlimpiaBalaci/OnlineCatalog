@@ -1,7 +1,11 @@
 package com.olba.controller;
 
+import com.olba.model.Parent;
+import com.olba.model.Schedule;
 import com.olba.model.Student;
 import com.olba.model.Teacher;
+import com.olba.repository.ParentRepository;
+import com.olba.repository.ScheduleRepository;
 import com.olba.repository.StudentRepository;
 import com.olba.repository.TeacherRepository;
 import javafx.event.ActionEvent;
@@ -10,7 +14,7 @@ import javafx.scene.control.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.sql.Date;
+import java.time.LocalTime;
 
 public class Controller {
     public Button btnSave;
@@ -43,8 +47,38 @@ public class Controller {
     public Label statusTeacher;
     public CheckBox checkBoXStatusTeacher;
     public Button btnSaveTeacher;
+    public Label classRoomName;
+    public Label teacherName;
+    public Label locationName;
+    public Label date;
+    public Label startDate;
+    public Label endDate;
+    public Label timeSlot;
+    public Label details;
+    public Label discipline;
+    public TextField txtClassRoomName;
+    public TextField txtTeacherName;
+    public TextField txtLocationName;
+    public DatePicker dbkDateSchedule;
+    public DatePicker dbkStartDate;
+    public DatePicker dbkEndDate;
+    public TextField txtTimeSlot;
+    public TextField txtDetails;
+    public TextField txtDiscipline;
+    public Button btnSaveSchedule;
+    public Label parentFirstName;
+    public Label parentLastName;
+    public Label parentEMail;
+    public Label parentPhone;
+    public TextField txtParentFirstName;
+    public TextField txtParentLastName;
+    public TextField txtParentEMail;
+    public TextField txtParentPhone;
+    public Button btnSaveParent;
     private StudentRepository studentRepository;//we make connection only once time
     private TeacherRepository teacherRepository;
+    private ScheduleRepository scheduleRepository;
+    private ParentRepository parentRepository;
 
 
     public void initialize() {
@@ -52,6 +86,8 @@ public class Controller {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         studentRepository = new StudentRepository(entityManager);
         teacherRepository = new TeacherRepository(entityManager);
+        scheduleRepository = new ScheduleRepository(entityManager);
+        parentRepository = new ParentRepository(entityManager);
     }
 
     public void saveStudent(ActionEvent actionEvent) {
@@ -93,7 +129,40 @@ public class Controller {
         //teacher.setStatus();
 
         teacherRepository.save(teacher);
-        System.out.println("Teacher added successfully" + txtFirstName);
+        System.out.println("Teacher added successfully");
 
     }
+    public void saveSchedule (ActionEvent actionEvent) {
+
+        Schedule schedule = new Schedule();
+        schedule.setClassroom_name(txtClassRoomName.getText());
+        schedule.setTeacher_name(txtTeacherName.getText());
+        schedule.setLocation(txtLocationName.getText());
+        schedule.setDate(dbkDateSchedule.getValue());
+        LocalTime localTime = null;
+        schedule.setStart(dbkStartDate.getValue());
+        schedule.setEnd(dbkEndDate.getValue());
+        schedule.setTime_slot(txtTimeSlot.getText());
+        schedule.setDetails(txtDetails.getText());
+        schedule.setDiscipline(txtDiscipline.getText());
+
+        scheduleRepository.save(schedule);
+        System.out.println("Schedule added successfully");
+
+    }
+
+    public void saveParent (ActionEvent actionEvent) {
+
+        Parent parent = new Parent();
+        parent.setFirst_name(txtParentFirstName.getText());
+        parent.setLast_name(txtParentLastName.getText());
+        parent.setE_mail(txtParentEMail.getText());
+        parent.setPhone(txtParentPhone.getText());
+
+
+        parentRepository.save(parent);
+        System.out.println("Parent added successfully");
+
+    }
+
 }
